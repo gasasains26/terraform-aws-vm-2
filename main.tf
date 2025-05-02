@@ -17,3 +17,12 @@ resource "aws_instance" "ubuntu" {
   }
 }
 
+terraform {
+  backend "s3" {
+    bucket = "tf-state-git-vm"
+    key    = "dev/terraform.tfstate"
+    region = "us-east-1"
+  }
+}
+
+
